@@ -47,24 +47,6 @@ ssh1sadd:
       <<: *all_regs
     rs2: 
       <<: *all_regs
-    rd:
-      <<: *all_regs
-    op_comb: 
-      <<: *rfmt_op_comb
-    val_comb:
-      <<: [*base_rs1val_sgn , *base_rs2val_sgn , *rfmt_val_comb_sgn]
-      abstract_comb:
-        <<: [*rs1val_walking, *rs2val_walking]
-
-pssh1sadd.w:
-    config: 
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics: 
-      pssh1sadd.w: 0
-    rs1: 
-      <<: *all_regs
-    rs2: 
-      <<: *all_regs
     rd: 
       <<: *all_regs
     op_comb: 
@@ -73,4 +55,5 @@ pssh1sadd.w:
       abstract_comb:
         'simd_base_val("rs1", xlen, 32, signed=True)': 0
         'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_base_val("rd", xlen, 32, signed=True)': 0
         'simd_val_comb(xlen, 32, signed=True)': 0

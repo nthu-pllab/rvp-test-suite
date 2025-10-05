@@ -1,9 +1,9 @@
 # P8
-psll.h.h0:
+psll.hs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      psll.h.h0: 0
+      psll.hs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -18,11 +18,11 @@ psll.h.h0:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-psll.b.b0:
+psll.bs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      psll.b.b0: 0
+      psll.bs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -37,11 +37,11 @@ psll.b.b0:
         'simd_base_val("rs2", xlen, 8, signed=True)': 0
         'simd_val_comb(xlen, 8, signed=True)': 0
 
-padd.h.h0:
+padd.hs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      padd.h.h0: 0
+      padd.hs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -56,11 +56,11 @@ padd.h.h0:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-padd.b.b0:
+padd.bs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      padd.b.b0: 0
+      padd.bs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -75,11 +75,11 @@ padd.b.b0:
         'simd_base_val("rs2", xlen, 8, signed=True)': 0
         'simd_val_comb(xlen, 8, signed=True)': 0
 
-pssha.h.h0:
+pssha.hs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pssha.h.h0: 0
+      pssha.hs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -94,11 +94,11 @@ pssha.h.h0:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-psshar.h.h0:
+psshar.hs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      psshar.h.h0: 0
+      psshar.hs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -112,3 +112,41 @@ psshar.h.h0:
         'simd_base_val("rs1", xlen, 16, signed=True)': 0
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
+
+ssha:
+    config: 
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics: 
+      ssha: 0
+    rs1: 
+      <<: *all_regs
+    rs2: 
+      <<: *all_regs
+    rd: 
+      <<: *all_regs
+    op_comb: 
+      <<: *rfmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+sshar:
+    config: 
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics: 
+      sshar: 0
+    rs1: 
+      <<: *all_regs
+    rs2: 
+      <<: *all_regs
+    rd: 
+      <<: *all_regs
+    op_comb: 
+      <<: *rfmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0

@@ -78,11 +78,11 @@ pmhaccu.h:
         'simd_base_val("rd", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmulh.h.be:
+pmulh.h.b0:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmulh.h.be: 0
+      pmulh.h.b0: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -97,11 +97,11 @@ pmulh.h.be:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmhacc.h.be:
+pmhacc.h.b0:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmhacc.h.be: 0
+      pmhacc.h.b0: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -117,11 +117,11 @@ pmhacc.h.be:
         'simd_base_val("rd", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmulh.h.bo:
+pmulh.h.b1:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmulh.h.bo: 0
+      pmulh.h.b1: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -136,11 +136,11 @@ pmulh.h.bo:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmhacc.h.bo:
+pmhacc.h.b1:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmhacc.h.bo: 0
+      pmhacc.h.b1: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -291,11 +291,11 @@ pmhracc.h:
         'simd_base_val("rd", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmulhsu.h.be:
+pmulhsu.h.b0:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmulhsu.h.be: 0
+      pmulhsu.h.b0: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -310,11 +310,11 @@ pmulhsu.h.be:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmhaccsu.h.be:
+pmhaccsu.h.b0:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmhaccsu.h.be: 0
+      pmhaccsu.h.b0: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -329,11 +329,11 @@ pmhaccsu.h.be:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmulhsu.h.bo:
+pmulhsu.h.b1:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmulhsu.h.bo: 0
+      pmulhsu.h.b1: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -348,11 +348,11 @@ pmulhsu.h.bo:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmhaccsu.h.bo:
+pmhaccsu.h.b1:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmhaccsu.h.bo: 0
+      pmhaccsu.h.b1: 0
     rs1:
       <<: *all_regs
     rs2:

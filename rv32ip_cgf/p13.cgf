@@ -1,10 +1,10 @@
 # Page 13
 
-pmul.h.bee:
+pmul.h.b00:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmul.h.bee: 0
+      pmul.h.b00: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -19,11 +19,11 @@ pmul.h.bee:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmul.h.boo:
+pmul.h.b11:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmul.h.boo: 0
+      pmul.h.b11: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -38,11 +38,11 @@ pmul.h.boo:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmulu.h.bee:
+pmulu.h.b00:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmulu.h.bee: 0
+      pmulu.h.b00: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -57,11 +57,11 @@ pmulu.h.bee:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmulu.h.boo:
+pmulu.h.b11:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmulu.h.boo: 0
+      pmulu.h.b11: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -76,11 +76,11 @@ pmulu.h.boo:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmulsu.h.bee:
+pmulsu.h.b00:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmulsu.h.bee: 0
+      pmulsu.h.b00: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -95,11 +95,11 @@ pmulsu.h.bee:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-pmulsu.h.boo:
+pmulsu.h.b11:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      pmulsu.h.boo: 0
+      pmulsu.h.b11: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -270,11 +270,11 @@ maccu.h11:
         'simd_base_val("rd", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-muslu.h00:
+mulsu.h00:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      muslu.h00: 0
+      mulsu.h00: 0
     rs1:
       <<: *all_regs
     rs2:

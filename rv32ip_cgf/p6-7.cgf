@@ -102,11 +102,11 @@ pli.b:
             'walking_zeros("imm_val", 8, False)': 0
             'alternate("imm_val", 8, False)': 0
 
-psextb.h:
+psext.h.b:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      psextb.h: 0
+      psext.h.b: 0
     rs1:
       <<: *all_regs
     rd:

@@ -600,4 +600,3 @@ asubu:
       <<: [*base_rs1val_sgn , *base_rs2val_sgn , *rfmt_val_comb_sgn]
       abstract_comb:
         <<: [*rs1val_walking, *rs2val_walking]
-

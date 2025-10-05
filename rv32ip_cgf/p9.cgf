@@ -112,11 +112,11 @@ psati.h:
         'simd_base_val("rs1", xlen, 16, signed=True)': 0
         'simd_imm_val("imm_val", 4)': 0
 
-psrl.h.h0:
+psrl.hs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      psrl.h.h0: 0
+      psrl.hs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -131,11 +131,11 @@ psrl.h.h0:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-predsum.h:
+predsum.hs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      predsum.h: 0
+      predsum.hs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -150,11 +150,11 @@ predsum.h:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-predsumu.h:
+predsumu.hs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      predsumu.h: 0
+      predsumu.hs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -169,11 +169,11 @@ predsumu.h:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-psra.h.h0:
+psra.hs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      psra.h.h0: 0
+      psra.hs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -188,11 +188,11 @@ psra.h.h0:
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
 
-psrl.b.b0:
+psrl.bs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      psrl.b.b0: 0
+      psrl.bs: 0
     rs1:
       <<: *all_regs
     rs2:
@@ -207,11 +207,49 @@ psrl.b.b0:
         'simd_base_val("rs2", xlen, 8, signed=True)': 0
         'simd_val_comb(xlen, 8, signed=True)': 0
 
-psra.b.b0:
+predsum.bs:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
     mnemonics:
-      psra.b.b0: 0
+      predsum.bs: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *all_regs
+    op_comb:
+      <<: *rfmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+predsumu.bs:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      predsumu.bs: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *all_regs
+    op_comb:
+      <<: *rfmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+psra.bs:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      psra.bs: 0
     rs1:
       <<: *all_regs
     rs2:
