@@ -1,0 +1,129 @@
+# Page 5
+
+sh1add:
+    config: 
+      - check ISA:=regex(.*I.*B.*)
+      - check ISA:=regex(.*I.*Zba.*)
+      - check ISA:=regex(.*I.*P)
+    mnemonics: 
+      sh1add: 0
+    rs1: 
+      <<: *all_regs
+    rs2: 
+      <<: *all_regs
+    rd:
+      <<: *all_regs
+    op_comb: 
+      <<: *rfmt_op_comb
+    val_comb:
+      <<: [*base_rs1val_sgn , *base_rs2val_sgn , *rfmt_val_comb_sgn]
+      abstract_comb:
+        'bitmanip_dataset(xlen)': 0
+        <<: [*rs1val_walking, *rs2val_walking]
+
+pack:
+    config: 
+      - check ISA:=regex(.*I.*B.*)
+      - check ISA:=regex(.*I.*Zbb.*)
+      - check ISA:=regex(.*I.*P)
+    mnemonics: 
+      pack: 0
+    p_op_cond: rs2 == x0
+    rs1: 
+      <<: *all_regs
+    rd: 
+      <<: *all_regs
+    op_comb: 
+      <<: *ifmt_op_comb
+    val_comb:
+      'rs1_val == 0': 0
+      'rs1_val == 0x80': 0
+      abstract_comb:
+        'walking_ones("rs1_val", xlen, False)': 0
+        'walking_zeros("rs1_val", xlen, False)': 0
+        'uniform_random(20, 100, ["rs1_val"], [xlen])': 0
+
+min:
+    config: 
+      - check ISA:=regex(.*I.*B.*)
+      - check ISA:=regex(.*I.*Zbb.*)
+      - check ISA:=regex(.*I.*P)
+    mnemonics: 
+      min: 0
+    rs1: 
+      <<: *all_regs
+    rs2: 
+      <<: *all_regs
+    rd:
+      <<: *all_regs
+    op_comb: 
+      <<: *rfmt_op_comb
+    val_comb:
+      <<: [*base_rs1val_sgn , *base_rs2val_sgn , *rfmt_val_comb_sgn]
+      abstract_comb:
+        'bitmanip_dataset(xlen)': 0
+        <<: [*rs1val_walking, *rs2val_walking]
+        
+minu:
+    config: 
+      - check ISA:=regex(.*I.*B.*)
+      - check ISA:=regex(.*I.*Zbb.*)
+      - check ISA:=regex(.*I.*P)
+    mnemonics: 
+      minu: 0
+    rs1: 
+      <<: *all_regs
+    rs2: 
+      <<: *all_regs
+    rd:
+      <<: *all_regs
+    op_comb: 
+      <<: *rfmt_op_comb
+    val_comb:
+      <<: [*base_rs1val_unsgn , *base_rs2val_unsgn , *rfmt_val_comb_unsgn]
+      abstract_comb:
+        'bitmanip_dataset(xlen,signed=False)': 0
+        <<: [*rs1val_walking_unsgn,*rs2val_walking_unsgn]
+
+max:
+    config: 
+      - check ISA:=regex(.*I.*B.*)
+      - check ISA:=regex(.*I.*Zbb.*)
+      - check ISA:=regex(.*I.*P)
+    mnemonics: 
+      max: 0
+    rs1: 
+      <<: *all_regs
+    rs2: 
+      <<: *all_regs
+    rd:
+      <<: *all_regs
+    op_comb: 
+      <<: *rfmt_op_comb
+    val_comb:
+      <<: [*base_rs1val_sgn , *base_rs2val_sgn , *rfmt_val_comb_sgn]
+      abstract_comb:
+        'bitmanip_dataset(xlen)': 0
+        <<: [*rs1val_walking, *rs2val_walking]
+        
+maxu:
+    config: 
+      - check ISA:=regex(.*I.*B.*)
+      - check ISA:=regex(.*I.*Zbb.*)
+      - check ISA:=regex(.*I.*P)
+    mnemonics: 
+      maxu: 0
+    rs1: 
+      <<: *all_regs
+    rs2: 
+      <<: *all_regs
+    rd:
+      <<: *all_regs
+    op_comb: 
+      <<: *rfmt_op_comb
+    val_comb:
+      <<: [*base_rs1val_unsgn , *base_rs2val_unsgn , *rfmt_val_comb_unsgn]
+      abstract_comb:
+        'bitmanip_dataset(xlen,signed=False)': 0
+        <<: [*rs1val_walking_unsgn,*rs2val_walking_unsgn]
+   

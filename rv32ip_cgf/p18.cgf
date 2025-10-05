@@ -1,0 +1,182 @@
+# Page 18
+
+pwslli.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwslli.b: 0
+    rs1:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      'imm_val == 0': 0
+      'imm_val > 0': 0
+      'imm_val == ((2**3)-1)': 0
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 8, signed=True)': 0
+
+pwslai.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwslai.b: 0
+    rs1:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      'imm_val == 0': 0
+      'imm_val > 0': 0
+      'imm_val == ((2**3)-1)': 0
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 8, signed=True)': 0
+
+pwslli.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwslli.h: 0
+    rs1:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      'imm_val == 0': 0
+      'imm_val > 0': 0
+      'imm_val == ((2**4)-1)': 0
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 16, signed=True)': 0
+
+pwslai.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwslai.h: 0
+    rs1:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      'imm_val == 0': 0
+      'imm_val > 0': 0
+      'imm_val == ((2**4)-1)': 0
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 16, signed=True)': 0
+
+wslli:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wslli: 0
+    rs1:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      'imm_val == 0': 0
+      'imm_val > 0': 0
+      'imm_val == ((2**6)-1)': 0
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 64, signed=True)': 0
+
+wslai:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wslai: 0
+    rs1:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      'imm_val == 0': 0
+      'imm_val > 0': 0
+      'imm_val == ((2**6)-1)': 0
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 64, signed=True)': 0
+
+
+pli.dh:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pli.dh: 0
+    rs1:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      'imm_val == 0': 0
+      'imm_val > 0': 0
+      'imm_val == ((2**4)-1)': 0
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 16, signed=True)': 0
+
+pli.db:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pli.db: 0
+    rs1:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      'imm_val == 0': 0
+      'imm_val > 0': 0
+      'imm_val == ((2**3)-1)': 0
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 8, signed=True)': 0
+
+plui.dh:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      plui.dh: 0
+    rs1:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      'imm_val == 0': 0
+      'imm_val > 0': 0
+      'imm_val == ((2**4)-1)': 0
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 16, signed=True)': 0
+
+pmin.dh:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pmin.dh: 0
+    rs1:
+      <<: *pair_regs
+    rs2:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *rfmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen * 2, 16, signed=True)': 0
