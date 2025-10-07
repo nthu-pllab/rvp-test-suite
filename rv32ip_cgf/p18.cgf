@@ -6,7 +6,7 @@ pwslli.b:
     mnemonics:
       pwslli.b: 0
     rs1:
-      <<: *pair_regs
+      <<: *all_regs
     rd:
       <<: *pair_regs
     op_comb:
@@ -16,7 +16,7 @@ pwslli.b:
       'imm_val > 0': 0
       'imm_val == ((2**3)-1)': 0
       abstract_comb:
-        'simd_base_val("rs1", xlen * 2, 8, signed=True)': 0
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
 
 pwslai.b:
     config:
@@ -24,7 +24,7 @@ pwslai.b:
     mnemonics:
       pwslai.b: 0
     rs1:
-      <<: *pair_regs
+      <<: *all_regs
     rd:
       <<: *pair_regs
     op_comb:
@@ -34,7 +34,7 @@ pwslai.b:
       'imm_val > 0': 0
       'imm_val == ((2**3)-1)': 0
       abstract_comb:
-        'simd_base_val("rs1", xlen * 2, 8, signed=True)': 0
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
 
 pwslli.h:
     config:
@@ -42,7 +42,7 @@ pwslli.h:
     mnemonics:
       pwslli.h: 0
     rs1:
-      <<: *pair_regs
+      <<: *all_regs
     rd:
       <<: *pair_regs
     op_comb:
@@ -52,7 +52,8 @@ pwslli.h:
       'imm_val > 0': 0
       'imm_val == ((2**4)-1)': 0
       abstract_comb:
-        'simd_base_val("rs1", xlen * 2, 16, signed=True)': 0
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+
 
 pwslai.h:
     config:
@@ -60,7 +61,7 @@ pwslai.h:
     mnemonics:
       pwslai.h: 0
     rs1:
-      <<: *pair_regs
+      <<: *all_regs
     rd:
       <<: *pair_regs
     op_comb:
@@ -70,7 +71,7 @@ pwslai.h:
       'imm_val > 0': 0
       'imm_val == ((2**4)-1)': 0
       abstract_comb:
-        'simd_base_val("rs1", xlen * 2, 16, signed=True)': 0
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
 
 wslli:
     config:
@@ -78,7 +79,7 @@ wslli:
     mnemonics:
       wslli: 0
     rs1:
-      <<: *pair_regs
+      <<: *all_regs
     rd:
       <<: *pair_regs
     op_comb:
@@ -86,9 +87,9 @@ wslli:
     val_comb:
       'imm_val == 0': 0
       'imm_val > 0': 0
-      'imm_val == ((2**6)-1)': 0
+      'imm_val == ((2**5)-1)': 0
       abstract_comb:
-        'simd_base_val("rs1", xlen * 2, 64, signed=True)': 0
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
 
 wslai:
     config:
@@ -96,7 +97,7 @@ wslai:
     mnemonics:
       wslai: 0
     rs1:
-      <<: *pair_regs
+      <<: *all_regs
     rd:
       <<: *pair_regs
     op_comb:
@@ -104,79 +105,57 @@ wslai:
     val_comb:
       'imm_val == 0': 0
       'imm_val > 0': 0
-      'imm_val == ((2**6)-1)': 0
+      'imm_val == ((2**5)-1)': 0
       abstract_comb:
-        'simd_base_val("rs1", xlen * 2, 64, signed=True)': 0
-
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
 
 pli.dh:
-    config:
+    config: 
       - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics:
+    mnemonics: 
       pli.dh: 0
-    rs1:
-      <<: *pair_regs
-    rd:
-      <<: *pair_regs
-    op_comb:
-      <<: *ifmt_op_comb
+    rd: 
+      <<: *all_regs
     val_comb:
-      'imm_val == 0': 0
-      'imm_val > 0': 0
-      'imm_val == ((2**4)-1)': 0
-      abstract_comb:
-        'simd_base_val("rs1", xlen * 2, 16, signed=True)': 0
+        'imm_val == 0': 0
+        'imm_val > 0': 0
+        'imm_val == ((2**10)-1)': 0
+        abstract_comb:
+            'sp_dataset(10, ["imm_val"], signed=False)': 0
+            'walking_ones("imm_val", 10, False)': 0
+            'walking_zeros("imm_val", 10, False)': 0
+            'alternate("imm_val", 10, False)': 0
 
 pli.db:
-    config:
+    config: 
       - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics:
+    mnemonics: 
       pli.db: 0
-    rs1:
-      <<: *pair_regs
-    rd:
-      <<: *pair_regs
-    op_comb:
-      <<: *ifmt_op_comb
+    rd: 
+      <<: *all_regs
     val_comb:
-      'imm_val == 0': 0
-      'imm_val > 0': 0
-      'imm_val == ((2**3)-1)': 0
-      abstract_comb:
-        'simd_base_val("rs1", xlen * 2, 8, signed=True)': 0
+        'imm_val == 0': 0
+        'imm_val > 0': 0
+        'imm_val == ((2**8)-1)': 0
+        abstract_comb:
+            'sp_dataset(8,["imm_val"],signed=False)': 0
+            'walking_ones("imm_val", 8, False)': 0
+            'walking_zeros("imm_val", 8, False)': 0
+            'alternate("imm_val", 8, False)': 0
 
 plui.dh:
-    config:
+    config: 
       - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics:
+    mnemonics: 
       plui.dh: 0
-    rs1:
-      <<: *pair_regs
-    rd:
-      <<: *pair_regs
-    op_comb:
-      <<: *ifmt_op_comb
+    rd: 
+      <<: *all_regs
     val_comb:
-      'imm_val == 0': 0
-      'imm_val > 0': 0
-      'imm_val == ((2**4)-1)': 0
-      abstract_comb:
-        'simd_base_val("rs1", xlen * 2, 16, signed=True)': 0
-
-pmin.dh:
-    config:
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics:
-      pmin.dh: 0
-    rs1:
-      <<: *pair_regs
-    rs2:
-      <<: *pair_regs
-    rd:
-      <<: *pair_regs
-    op_comb:
-      <<: *rfmt_op_comb
-    val_comb:
-      abstract_comb:
-        'simd_base_val("rs1", xlen * 2, 16, signed=True)': 0
-        'simd_base_val("rs2", xlen * 2, 16, signed=True)': 0
+        'imm_val == 0': 0
+        'imm_val > 0': 0
+        'imm_val == ((2**10)-1)': 0
+        abstract_comb:
+            'sp_dataset(10, ["imm_val"], signed=False)': 0
+            'walking_ones("imm_val", 10, False)': 0
+            'walking_zeros("imm_val", 10, False)': 0
+            'alternate("imm_val", 10, False)': 0
