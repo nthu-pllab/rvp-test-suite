@@ -263,3 +263,48 @@ psra.bs:
         'simd_base_val("rs1", xlen, 8, signed=True)': 0
         'simd_base_val("rs2", xlen, 8, signed=True)': 0
         'simd_val_comb(xlen, 8, signed=True)': 0
+
+usati:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      usati: 0
+    rs1:
+      <<: *all_regs
+    rd:
+      <<: *all_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        <<: [*rs1val_walking, *ifmt_immval_walking_len]
+
+srari:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      srari: 0
+    rs1:
+      <<: *all_regs
+    rd:
+      <<: *all_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        <<: [*rs1val_walking, *ifmt_immval_walking_len]
+
+sati:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      sati: 0
+    rs1:
+      <<: *all_regs
+    rd:
+      <<: *all_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        <<: [*rs1val_walking, *ifmt_immval_walking_len]
