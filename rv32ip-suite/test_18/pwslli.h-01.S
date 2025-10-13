@@ -68,7 +68,7 @@ TEST_PAIR_PN_IMM_OP(pwslli.h, x8, x9, x26, 0x0, 0x00000000, 0, 0xf7ff8000, x1, 1
 inst_6:
 // rs1==x10, rd==x18, rs1_h1_val == -1025, 
 // opcode: pwslli.h ; op1:x10; op2:$rs2; dest:x18; op1val:0xfbff8000; immval:0x0
-TEST_PAIR_PN_IMM_OP(pwslli.h, x18, x19, x10, 0x0, 0x00000000, 0, 0xfbff8000, x1, 12*XLEN/8, x5)
+TEST_PAIR_PN_IMM_OP(pwslli.h, x22, x23, x10, 0x0, 0x00000000, 0, 0xfbff8000, x1, 12*XLEN/8, x5)
 
 inst_7:
 // rs1==x21, rd==x22, rs1_h1_val == -513, 
@@ -164,12 +164,12 @@ TEST_PAIR_PN_IMM_OP(pwslli.h, x20, x21, x7, 0x0, 0x00000000, 0, 0x00808000, x1, 
 inst_25:
 // rs1==x2, rs1_h1_val == 64, 
 // opcode: pwslli.h ; op1:x2; op2:$rs2; dest:x18; op1val:0x00408000; immval:0x0
-TEST_PAIR_PN_IMM_OP(pwslli.h, x18, x19, x2, 0x0, 0x00000000, 0, 0x00408000, x1, 24*XLEN/8, x4)
+TEST_PAIR_PN_IMM_OP(pwslli.h, x20, x21, x2, 0x0, 0x00000000, 0, 0x00408000, x1, 24*XLEN/8, x4)
 
 inst_26:
 // rs1==x18, rs1_h1_val == 32, 
 // opcode: pwslli.h ; op1:x18; op2:$rs2; dest:x12; op1val:0x00208000; immval:0x0
-TEST_PAIR_PN_IMM_OP(pwslli.h, x12, x13, x18, 0x0, 0x00000000, 0, 0x00208000, x1, 26*XLEN/8, x4)
+TEST_PAIR_PN_IMM_OP(pwslli.h, x12, x13, x19, 0x0, 0x00000000, 0, 0x00208000, x1, 26*XLEN/8, x4)
 
 inst_27:
 // rs1==x14, rs1_h1_val == 16, 

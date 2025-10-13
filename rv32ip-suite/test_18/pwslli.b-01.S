@@ -68,7 +68,7 @@ TEST_PAIR_PN_IMM_OP(pwslli.b, x4, x5, x25, 0x0, 0x00000000, 0, 0xf7808080, x1, 1
 inst_6:
 // rs1==x31, rd==x18, rs1_b3_val == -5, 
 // opcode: pwslli.b ; op1:x31; op2:$rs2; dest:x18; op1val:0xfb808080; immval:0x0
-TEST_PAIR_PN_IMM_OP(pwslli.b, x18, x19, x31, 0x0, 0x00000000, 0, 0xfb808080, x1, 12*XLEN/8, x7)
+TEST_PAIR_PN_IMM_OP(pwslli.b, x20, x21, x31, 0x0, 0x00000000, 0, 0xfb808080, x1, 12*XLEN/8, x7)
 
 inst_7:
 // rs1==x27, rd==x30, rs1_b3_val == -3, 
@@ -169,7 +169,7 @@ TEST_PAIR_PN_IMM_OP(pwslli.b, x10, x11, x12, 0x0, 0x00000000, 0, 0x80f78080, x24
 inst_26:
 // rs1==x17, rs1_b2_val == -5, 
 // opcode: pwslli.b ; op1:x17; op2:$rs2; dest:x18; op1val:0x80fb8080; immval:0x0
-TEST_PAIR_PN_IMM_OP(pwslli.b, x18, x19, x17, 0x0, 0x00000000, 0, 0x80fb8080, x24, 26*XLEN/8, x9)
+TEST_PAIR_PN_IMM_OP(pwslli.b, x20, x21, x17, 0x0, 0x00000000, 0, 0x80fb8080, x24, 26*XLEN/8, x9)
 RVTEST_SIGBASE(x1,signature_x1_2)
 
 inst_27:
@@ -195,7 +195,7 @@ TEST_PAIR_PN_IMM_OP(pwslli.b, x4, x5, x11, 0x0, 0x00000000, 0, 0x80208080, x1, 6
 inst_31:
 // rs1==x18, rs1_b2_val == 16, 
 // opcode: pwslli.b ; op1:x18; op2:$rs2; dest:x12; op1val:0x80108080; immval:0x0
-TEST_PAIR_PN_IMM_OP(pwslli.b, x12, x13, x18, 0x0, 0x00000000, 0, 0x80108080, x1, 8*XLEN/8, x2)
+TEST_PAIR_PN_IMM_OP(pwslli.b, x12, x13, x19, 0x0, 0x00000000, 0, 0x80108080, x1, 8*XLEN/8, x2)
 
 inst_32:
 // rs1_b2_val == 8, 
