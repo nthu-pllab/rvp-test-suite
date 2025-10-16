@@ -75,3 +75,1094 @@ pwsll.hs:
         'simd_base_val("rs1", xlen, 16, signed=True)': 0
         'simd_base_val("rs2", xlen, 16, signed=True)': 0
         'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwsla.hs:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwsla.hs: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+wzip16p:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wzip16p: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+wsll:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wsll: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wsla:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wsla: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+pwadd.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwadd.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwadda.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwadda.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_base_val("rd", xlen * 2, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwaddu.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwaddu.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwaddau.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwaddau.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_base_val("rd", xlen * 2, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwmul.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwmul.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwmulu.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwmulu.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwsub.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwsub.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwsuba.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwsuba.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_base_val("rd", xlen * 2, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwsubu.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwsubu.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwsubau.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwsubau.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_base_val("rd", xlen * 2, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwmulsu.b:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwmulsu.b: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+        'simd_base_val("rs2", xlen, 8, signed=True)': 0
+        'simd_val_comb(xlen, 8, signed=True)': 0
+
+pwaddu.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwaddu.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwaddau.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwaddau.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwmul.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwmul.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwmacc.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwmacc.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwmulu.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwmulu.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwmaccu.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwmaccu.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwsub.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwsub.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwsuba.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwsuba.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwsubu.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwsubu.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwsubau.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwsubau.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwmulsu.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwmulsu.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pwmaccsu.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pwmaccsu.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pmqwacc.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pmqwacc.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pmqrwacc.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pmqrwacc.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen * 2, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2wadd.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2wadd.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2wadda.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2wadda.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2wadd.hx:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2wadd.hx: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2wadda.hx:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2wadda.hx: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2waddu.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2waddu.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2waddau.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2waddau.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2wsub.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2wsub.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2wsuba.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2wsuba.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2wsub.hx:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2wsub.hx: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2wsuba.hx:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2wsuba.hx: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2waddsu.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2waddsu.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+pm2waddasu.h:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pm2waddasu.h: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+        'simd_base_val("rs2", xlen, 16, signed=True)': 0
+        'simd_base_val("rd", xlen, 16, signed=True)': 0
+        'simd_val_comb(xlen, 16, signed=True)': 0
+
+
+wadd:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wadd: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wadda:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wadda: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_base_val("rd", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+waddu:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      waddu: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+waddau:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      waddau: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_base_val("rd", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wmul:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wmul: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wmacc:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wmacc: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_base_val("rd", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wmulu:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wmulu: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wmaccu:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wmaccu: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_base_val("rd", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wsub:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wsub: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wsuba:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wsuba: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_base_val("rd", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wsubu:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wsubu: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wsubau:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wsubau: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_base_val("rd", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wmulsu:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wmulsu: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+wmaccsu:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      wmaccsu: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_base_val("rd", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
+
+pmqwacc:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      pmqwacc: 0
+    rs1:
+      <<: *all_regs
+    rs2:
+      <<: *all_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *ifmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+        'simd_base_val("rs2", xlen, 32, signed=True)': 0
+        'simd_base_val("rd", xlen, 32, signed=True)': 0
+        'simd_val_comb(xlen, 32, signed=True)': 0
