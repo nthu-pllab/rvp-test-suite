@@ -612,6 +612,42 @@ pasubu.db:
         'simd_base_val("rs1", xlen * 2, 8, signed=True)': 0
         'simd_base_val("rs2", xlen * 2, 8, signed=True)': 0
 
+addd:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      addd: 0
+    rs1:
+      <<: *pair_regs
+    rs2:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *rfmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 64, signed=True)': 0
+        'simd_base_val("rs2", xlen * 2, 64, signed=True)': 0
+
+subd:
+    config:
+      - check ISA:=regex(.*I.*P.*Zicsr.*)
+    mnemonics:
+      subd: 0
+    rs1:
+      <<: *pair_regs
+    rs2:
+      <<: *pair_regs
+    rd:
+      <<: *pair_regs
+    op_comb:
+      <<: *rfmt_op_comb
+    val_comb:
+      abstract_comb:
+        'simd_base_val("rs1", xlen * 2, 64, signed=True)': 0
+        'simd_base_val("rs2", xlen * 2, 64, signed=True)': 0
+
 psh1add.dh:
     config:
       - check ISA:=regex(.*I.*P.*Zicsr.*)
