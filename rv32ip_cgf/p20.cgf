@@ -338,7 +338,7 @@ nsrli:
     val_comb:
       'imm_val == 0': 0
       'imm_val > 0': 0
-      'imm_val == ((2**6)-1)': 0
+      'imm_val == ((2**5)-1)': 0
       abstract_comb:
         'simd_base_val("rs1", xlen * 2, 32, signed=True)': 0
 
@@ -356,7 +356,7 @@ nclipiu:
     val_comb:
       'imm_val == 0': 0
       'imm_val > 0': 0
-      'imm_val == ((2**6)-1)': 0
+      'imm_val == ((2**5)-1)': 0
       abstract_comb:
         'simd_base_val("rs1", xlen * 2, 32, signed=True)': 0
 
@@ -374,7 +374,7 @@ nclipriu:
     val_comb:
       'imm_val == 0': 0
       'imm_val > 0': 0
-      'imm_val == ((2**6)-1)': 0
+      'imm_val == ((2**5)-1)': 0
       abstract_comb:
         'simd_base_val("rs1", xlen * 2, 32, signed=True)': 0
 
@@ -392,7 +392,7 @@ nsrai:
     val_comb:
       'imm_val == 0': 0
       'imm_val > 0': 0
-      'imm_val == ((2**6)-1)': 0
+      'imm_val == ((2**5)-1)': 0
       abstract_comb:
         'simd_base_val("rs1", xlen * 2, 32, signed=True)': 0
 
@@ -410,7 +410,7 @@ nsrari:
     val_comb:
       'imm_val == 0': 0
       'imm_val > 0': 0
-      'imm_val == ((2**6)-1)': 0
+      'imm_val == ((2**5)-1)': 0
       abstract_comb:
         'simd_base_val("rs1", xlen * 2, 32, signed=True)': 0
 
@@ -428,7 +428,7 @@ nclipi:
     val_comb:
       'imm_val == 0': 0
       'imm_val > 0': 0
-      'imm_val == ((2**6)-1)': 0
+      'imm_val == ((2**5)-1)': 0
       abstract_comb:
         'simd_base_val("rs1", xlen * 2, 32, signed=True)': 0
 
@@ -446,7 +446,7 @@ nclipri:
     val_comb:
       'imm_val == 0': 0
       'imm_val > 0': 0
-      'imm_val == ((2**6)-1)': 0
+      'imm_val == ((2**5)-1)': 0
       abstract_comb:
         'simd_base_val("rs1", xlen * 2, 32, signed=True)': 0
 
