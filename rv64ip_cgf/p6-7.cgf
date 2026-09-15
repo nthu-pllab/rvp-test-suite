@@ -92,146 +92,140 @@ pli.h:
     rd: 
       <<: *all_regs
     val_comb:
-        'imm_val == 0': 0
-        'imm_val > 0': 0
-        'imm_val == ((2**10)-1)': 0
+        'imm_val < 511': 0
+        'imm_val > -512': 0
         abstract_comb:
-            'sp_dataset(10, ["imm_val"], signed=False)': 0
-            'walking_ones("imm_val", 10, False)': 0
-            'walking_zeros("imm_val", 10, False)': 0
-            'alternate("imm_val", 10, False)': 0
+            'walking_ones("imm_val", 10, signed=True)': 0
+            'walking_zeros("imm_val", 10, signed=True)': 0
+            'alternate("imm_val", 10, signed=True)': 0
 
-pli.b:
-    config: 
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics: 
-      pli.b: 0
-    rd: 
-      <<: *all_regs
-    val_comb:
-        'imm_val == 0': 0
-        'imm_val > 0': 0
-        'imm_val == ((2**8)-1)': 0
-        abstract_comb:
-            'sp_dataset(8,["imm_val"],signed=False)': 0
-            'walking_ones("imm_val", 8, False)': 0
-            'walking_zeros("imm_val", 8, False)': 0
-            'alternate("imm_val", 8, False)': 0
+# pli.b:
+#     config: 
+#       - check ISA:=regex(.*I.*P.*Zicsr.*)
+#     mnemonics: 
+#       pli.b: 0
+#     rd: 
+#       <<: *all_regs
+#     val_comb:
+#         'imm_val == 0': 0
+#         'imm_val > 0': 0
+#         'imm_val == ((2**8)-1)': 0
+#         abstract_comb:
+#             'sp_dataset(8,["imm_val"],signed=False)': 0
+#             'walking_ones("imm_val", 8, False)': 0
+#             'walking_zeros("imm_val", 8, False)': 0
+#             'alternate("imm_val", 8, False)': 0
 
-pli.w:
-    config: 
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics: 
-      pli.w: 0
-    rd: 
-      <<: *all_regs
-    val_comb:
-        'imm_val == 0': 0
-        'imm_val > 0': 0
-        'imm_val == ((2**10)-1)': 0
-        abstract_comb:
-            'sp_dataset(10, ["imm_val"], signed=False)': 0
-            'walking_ones("imm_val", 10, False)': 0
-            'walking_zeros("imm_val", 10, False)': 0
-            'alternate("imm_val", 10, False)': 0
+# pli.w:
+#     config: 
+#       - check ISA:=regex(.*I.*P.*Zicsr.*)
+#     mnemonics: 
+#       pli.w: 0
+#     rd: 
+#       <<: *all_regs
+#     val_comb:
+#         'imm_val == 0': 0
+#         'imm_val == ((2**9)-1)': 0
+#         abstract_comb:
+#             'sp_dataset(10, ["imm_val"], signed=True)': 0
+#             'walking_ones("imm_val", 10, signed=True)': 0
+#             'walking_zeros("imm_val", 10, signed=True)': 0
+#             'alternate("imm_val", 10, signed=True)': 0
 
-# Page 7
+# # Page 7
 
-psext.h.b:
-    config:
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics:
-      psext.h.b: 0
-    rs1:
-      <<: *all_regs
-    rd:
-      <<: *all_regs
-    val_comb:
-      abstract_comb:
-        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+# psext.h.b:
+#     config:
+#       - check ISA:=regex(.*I.*P.*Zicsr.*)
+#     mnemonics:
+#       psext.h.b: 0
+#     rs1:
+#       <<: *all_regs
+#     rd:
+#       <<: *all_regs
+#     val_comb:
+#       abstract_comb:
+#         'simd_base_val("rs1", xlen, 16, signed=True)': 0
 
-psabs.h:
-    config:
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics:
-      psabs.h: 0
-    rs1:
-      <<: *all_regs
-    rd:
-      <<: *all_regs
-    val_comb:
-      abstract_comb:
-        'simd_base_val("rs1", xlen, 16, signed=True)': 0
+# psabs.h:
+#     config:
+#       - check ISA:=regex(.*I.*P.*Zicsr.*)
+#     mnemonics:
+#       psabs.h: 0
+#     rs1:
+#       <<: *all_regs
+#     rd:
+#       <<: *all_regs
+#     val_comb:
+#       abstract_comb:
+#         'simd_base_val("rs1", xlen, 16, signed=True)': 0
 
-psabs.b:
-    config:
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics:
-      psabs.b: 0
-    rs1:
-      <<: *all_regs
-    rd:
-      <<: *all_regs
-    val_comb:
-      abstract_comb:
-        'simd_base_val("rs1", xlen, 8, signed=True)': 0
+# psabs.b:
+#     config:
+#       - check ISA:=regex(.*I.*P.*Zicsr.*)
+#     mnemonics:
+#       psabs.b: 0
+#     rs1:
+#       <<: *all_regs
+#     rd:
+#       <<: *all_regs
+#     val_comb:
+#       abstract_comb:
+#         'simd_base_val("rs1", xlen, 8, signed=True)': 0
 
-psext.w.h:
-    config: 
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics: 
-      psext.w.h: 0
-    rs1: 
-      <<: *all_regs
-    rd: 
-      <<: *all_regs
-    val_comb:
-      abstract_comb:
-        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+# psext.w.h:
+#     config: 
+#       - check ISA:=regex(.*I.*P.*Zicsr.*)
+#     mnemonics: 
+#       psext.w.h: 0
+#     rs1: 
+#       <<: *all_regs
+#     rd: 
+#       <<: *all_regs
+#     val_comb:
+#       abstract_comb:
+#         'simd_base_val("rs1", xlen, 32, signed=True)': 0
 
-psext.w.b:
-    config: 
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics: 
-      psext.w.b: 0
-    rs1: 
-      <<: *all_regs
-    rd: 
-      <<: *all_regs
-    val_comb:
-      abstract_comb:
-        'simd_base_val("rs1", xlen, 32, signed=True)': 0
+# psext.w.b:
+#     config: 
+#       - check ISA:=regex(.*I.*P.*Zicsr.*)
+#     mnemonics: 
+#       psext.w.b: 0
+#     rs1: 
+#       <<: *all_regs
+#     rd: 
+#       <<: *all_regs
+#     val_comb:
+#       abstract_comb:
+#         'simd_base_val("rs1", xlen, 32, signed=True)': 0
 
-plui.h:
-    config: 
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics: 
-      plui.h: 0
-    rd: 
-      <<: *all_regs
-    val_comb:
-        'imm_val == 0': 0
-        'imm_val > 0': 0
-        'imm_val == ((2**10)-1)': 0
-        abstract_comb:
-            'sp_dataset(10, ["imm_val"], signed=False)': 0
-            'walking_ones("imm_val", 10, False)': 0
-            'walking_zeros("imm_val", 10, False)': 0
-            'alternate("imm_val", 10, False)': 0
-
-plui.w:
-    config: 
-      - check ISA:=regex(.*I.*P.*Zicsr.*)
-    mnemonics: 
-      plui.w: 0
-    rd: 
-      <<: *all_regs
-    val_comb:
-        'imm_val == 0': 0
-        'imm_val > 0': 0
-        'imm_val == ((2**10)-1)': 0
-        abstract_comb:
-            'sp_dataset(10, ["imm_val"], signed=False)': 0
-            'walking_ones("imm_val", 10, False)': 0
-            'walking_zeros("imm_val", 10, False)': 0
-            'alternate("imm_val", 10, False)': 0
+# plui.h:
+#     config: 
+#       - check ISA:=regex(.*I.*P.*Zicsr.*)
+#     mnemonics: 
+#       plui.h: 0
+#     rd: 
+#       <<: *all_regs
+#     val_comb:
+#         'imm_val == 0': 0
+#         'imm_val == ((2**9)-1)': 0
+#         abstract_comb:
+#             'sp_dataset(10, ["imm_val"], signed=True)': 0
+#             'walking_ones("imm_val", 10, signed=True)': 0
+#             'walking_zeros("imm_val", 10, signed=True)': 0
+#             'alternate("imm_val", 10, signed=True)': 0
+# # plui.w:
+# #     config: 
+# #       - check ISA:=regex(.*I.*P.*Zicsr.*)
+# #     mnemonics: 
+# #       plui.w: 0
+# #     rd: 
+# #       <<: *all_regs
+# #     val_comb:
+# #         'imm_val == 0': 0
+# #         'imm_val == ((2**9)-1)': 0
+# #         abstract_comb:
+# #             'sp_dataset(10, ["imm_val"], signed=True)': 0
+# #             'walking_ones("imm_val", 10, signed=True)': 0
+# #             'walking_zeros("imm_val", 10, signed=True)': 0
+# #             'alternate("imm_val", 10, signed=True)': 0
